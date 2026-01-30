@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StatSenseI - 让数据更智能</title>
+    <title>StatSense4 - 让数据更智能</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
@@ -25,17 +26,17 @@
             --transition: all 0.3s ease;
             --glow: 0 0 10px rgba(76, 201, 240, 0.7);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
         }
-        
+
         body {
             background-color: var(--dark-color);
-            background-image: 
+            background-image:
                 radial-gradient(circle at 10% 20%, rgba(76, 201, 240, 0.05) 0%, transparent 20%),
                 radial-gradient(circle at 90% 80%, rgba(157, 78, 221, 0.05) 0%, transparent 20%),
                 linear-gradient(135deg, #0d1117 0%, #161b22 100%);
@@ -49,7 +50,7 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         /* 粒子背景容器 */
         #particles-js {
             position: fixed;
@@ -59,7 +60,7 @@
             height: 100%;
             z-index: -1;
         }
-        
+
         /* 科技感背景动画 */
         .tech-bg {
             position: fixed;
@@ -70,7 +71,7 @@
             z-index: -1;
             overflow: hidden;
         }
-        
+
         .tech-bg::before {
             content: '';
             position: absolute;
@@ -78,19 +79,24 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
+            background-image:
                 linear-gradient(transparent 65%, rgba(76, 201, 240, 0.03) 75%, transparent 85%),
                 linear-gradient(90deg, transparent 65%, rgba(157, 78, 221, 0.03) 75%, transparent 85%);
             background-size: 50px 50px;
             animation: gridMove 20s linear infinite;
             opacity: 0.3;
         }
-        
+
         @keyframes gridMove {
-            0% { background-position: 0 0; }
-            100% { background-position: 50px 50px; }
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 50px 50px;
+            }
         }
-        
+
         .floating-element {
             position: absolute;
             width: 2px;
@@ -100,13 +106,13 @@
             box-shadow: 0 0 8px var(--neon-blue);
             animation: float 15s infinite linear;
         }
-        
+
         .floating-element:nth-child(1) {
             top: 20%;
             left: 10%;
             animation-delay: 0s;
         }
-        
+
         .floating-element:nth-child(2) {
             top: 60%;
             left: 85%;
@@ -114,13 +120,13 @@
             background-color: var(--neon-purple);
             box-shadow: 0 0 8px var(--neon-purple);
         }
-        
+
         .floating-element:nth-child(3) {
             top: 80%;
             left: 15%;
             animation-delay: 6s;
         }
-        
+
         .floating-element:nth-child(4) {
             top: 30%;
             left: 90%;
@@ -128,14 +134,27 @@
             background-color: var(--neon-purple);
             box-shadow: 0 0 8px var(--neon-purple);
         }
-        
+
         @keyframes float {
-            0%, 100% { transform: translateY(0) translateX(0); }
-            25% { transform: translateY(-20px) translateX(10px); }
-            50% { transform: translateY(10px) translateX(-10px); }
-            75% { transform: translateY(-10px) translateX(-5px); }
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+
+            25% {
+                transform: translateY(-20px) translateX(10px);
+            }
+
+            50% {
+                transform: translateY(10px) translateX(-10px);
+            }
+
+            75% {
+                transform: translateY(-10px) translateX(-5px);
+            }
         }
-        
+
         .container {
             max-width: 1400px;
             width: 100%;
@@ -144,7 +163,7 @@
             position: relative;
             z-index: 1;
         }
-        
+
         /* 头部样式 */
         header {
             text-align: center;
@@ -152,7 +171,7 @@
             padding-top: 20px;
             position: relative;
         }
-        
+
         .logo-container {
             display: inline-flex;
             align-items: center;
@@ -166,7 +185,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .logo-container::before {
             content: '';
             position: absolute;
@@ -177,12 +196,17 @@
             background: linear-gradient(90deg, transparent, rgba(76, 201, 240, 0.2), transparent);
             animation: shine 3s infinite;
         }
-        
+
         @keyframes shine {
-            0% { left: -100%; }
-            100% { left: 100%; }
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
         }
-        
+
         .logo {
             font-size: 2rem;
             font-weight: 700;
@@ -191,19 +215,24 @@
             align-items: center;
             gap: 10px;
         }
+
         .logo-img {
-            width: 50px;  /* 设置宽度 */
-            height: 50px; /* 设置高度 */
-            object-fit: contain; /* 确保图片比例不失真 */
-            filter: drop-shadow(0 0 5px rgba(76, 201, 240, 0.5)); /* 给图片加点科技感发光 */
+            width: 50px;
+            /* 设置宽度 */
+            height: 50px;
+            /* 设置高度 */
+            object-fit: contain;
+            /* 确保图片比例不失真 */
+            filter: drop-shadow(0 0 5px rgba(76, 201, 240, 0.5));
+            /* 给图片加点科技感发光 */
         }
-        
+
         .logo-icon {
             color: var(--accent-color);
             font-size: 2.5rem;
             filter: drop-shadow(0 0 5px rgba(76, 201, 240, 0.7));
         }
-        
+
         h1 {
             font-size: 3.5rem;
             background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple), var(--accent-color));
@@ -216,7 +245,7 @@
             position: relative;
             display: inline-block;
         }
-        
+
         h1::after {
             content: '';
             position: absolute;
@@ -227,7 +256,7 @@
             height: 3px;
             background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
         }
-        
+
         h2 {
             font-size: 1.8rem;
             color: var(--gray-color);
@@ -236,7 +265,7 @@
             margin: 30px auto;
             line-height: 1.5;
         }
-        
+
         /* 图标区域样式 */
         .subtitle-icons {
             display: flex;
@@ -245,7 +274,7 @@
             margin: 40px 0;
             flex-wrap: wrap;
         }
-        
+
         .icon-item {
             display: flex;
             flex-direction: column;
@@ -255,32 +284,35 @@
             opacity: 0;
             transform: translateY(30px) scale(0.8);
         }
-        
+
         .icon-item.animate-in {
             animation: iconJumpIn 0.6s ease-out forwards;
         }
-        
+
         @keyframes iconJumpIn {
             0% {
                 opacity: 0;
                 transform: translateY(30px) scale(0.8);
             }
+
             50% {
                 transform: translateY(-10px) scale(1.05);
             }
+
             70% {
                 transform: translateY(5px) scale(0.95);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0) scale(1);
             }
         }
-        
+
         .icon-item:hover {
             transform: translateY(-5px);
         }
-        
+
         .icon-circle {
             width: 70px;
             height: 70px;
@@ -295,29 +327,32 @@
             box-shadow: 0 0 15px rgba(76, 201, 240, 0.2);
             transition: var(--transition);
         }
-        
+
         .icon-item:hover .icon-circle {
             transform: scale(1.1);
             box-shadow: 0 0 25px rgba(76, 201, 240, 0.4);
             border-color: var(--neon-blue);
             animation: iconPulse 1.5s infinite;
         }
-        
+
         @keyframes iconPulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 box-shadow: 0 0 15px rgba(76, 201, 240, 0.2);
             }
+
             50% {
                 box-shadow: 0 0 25px rgba(76, 201, 240, 0.6);
             }
         }
-        
+
         .icon-text {
             font-size: 1rem;
             color: var(--gray-color);
             font-weight: 500;
         }
-        
+
         /* 信息强化模块 - 居中显示 */
         .highlight-box {
             background: linear-gradient(135deg, rgba(67, 97, 238, 0.2), rgba(157, 78, 221, 0.2));
@@ -337,35 +372,40 @@
             opacity: 0;
             transform: translateY(30px) scale(0.95);
         }
-        
+
         .highlight-box.animate-in {
             animation: highlightReveal 1.2s ease-out forwards;
         }
-        
+
         @keyframes highlightReveal {
             0% {
                 opacity: 0;
                 transform: translateY(30px) scale(0.95);
             }
+
             20% {
                 opacity: 0.7;
                 transform: translateY(-10px) scale(1.02);
             }
+
             40% {
                 transform: translateY(5px) scale(0.98);
             }
+
             60% {
                 transform: translateY(-3px) scale(1.01);
             }
+
             80% {
                 transform: translateY(2px) scale(0.99);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0) scale(1);
             }
         }
-        
+
         .highlight-box::before {
             content: '';
             position: absolute;
@@ -376,12 +416,17 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
             animation: shimmer 3s infinite;
         }
-        
+
         @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
         }
-        
+
         .highlight-content {
             display: flex;
             align-items: center;
@@ -390,30 +435,31 @@
             z-index: 1;
             text-align: center;
         }
-        
+
         .highlight-icon {
             font-size: 3.2rem;
             color: var(--neon-blue);
             filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.7));
             animation: iconGlow 2s infinite alternate;
         }
-        
+
         @keyframes iconGlow {
             0% {
                 filter: drop-shadow(0 0 5px rgba(0, 217, 255, 0.5));
                 transform: scale(1);
             }
+
             100% {
                 filter: drop-shadow(0 0 15px rgba(0, 217, 255, 0.9));
                 transform: scale(1.05);
             }
         }
-        
+
         .highlight-text {
             font-size: 1.6rem;
             font-weight: 600;
         }
-        
+
         .highlight-amount {
             font-size: 2.2rem;
             font-weight: 800;
@@ -421,18 +467,19 @@
             text-shadow: 0 0 10px rgba(255, 209, 102, 0.5);
             animation: amountPulse 2s infinite alternate;
         }
-        
+
         @keyframes amountPulse {
             0% {
                 text-shadow: 0 0 5px rgba(255, 209, 102, 0.5);
                 transform: scale(1);
             }
+
             100% {
                 text-shadow: 0 0 15px rgba(255, 209, 102, 0.9);
                 transform: scale(1.05);
             }
         }
-        
+
         /* 价格方案容器 - 一行四个 */
         .pricing-container {
             display: grid;
@@ -440,7 +487,7 @@
             gap: 25px;
             margin-bottom: 80px;
         }
-        
+
         .pricing-card {
             background: rgba(22, 27, 34, 0.8);
             border-radius: var(--border-radius);
@@ -456,28 +503,29 @@
             opacity: 0;
             transform: translateY(30px);
         }
-        
+
         .pricing-card.animate-in {
             animation: cardSlideUp 0.8s ease-out forwards;
         }
-        
+
         @keyframes cardSlideUp {
             0% {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         .pricing-card:hover {
             transform: translateY(-15px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), var(--glow);
             border-color: rgba(76, 201, 240, 0.3);
         }
-        
+
         /* 卡片头部 */
         .card-header {
             padding: 25px 20px;
@@ -489,7 +537,7 @@
             flex-direction: column;
             justify-content: center;
         }
-        
+
         .period {
             font-size: 1.1rem;
             color: var(--gray-color);
@@ -500,11 +548,11 @@
             justify-content: center;
             gap: 8px;
         }
-        
+
         .period i {
             color: var(--accent-color);
         }
-        
+
         .plan-name {
             font-size: 1.8rem;
             font-weight: 700;
@@ -515,7 +563,7 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .price {
             font-size: 2.8rem;
             font-weight: 800;
@@ -523,20 +571,20 @@
             margin-bottom: 10px;
             text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
         }
-        
+
         /* 视觉权重指示器 */
         .weight-indicator {
             display: flex;
             justify-content: center;
             margin-bottom: 15px;
         }
-        
+
         .star {
             color: #ffc107;
             font-size: 1.2rem;
             text-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
         }
-        
+
         /* 价值主张 */
         .value-prop {
             background: linear-gradient(90deg, rgba(67, 97, 238, 0.15), rgba(76, 201, 240, 0.15));
@@ -550,7 +598,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .value-prop::before {
             content: '';
             position: absolute;
@@ -560,7 +608,7 @@
             height: 100%;
             background: linear-gradient(to bottom, var(--neon-blue), var(--neon-purple));
         }
-        
+
         /* 特色标签 */
         .featured-tag {
             position: absolute;
@@ -575,23 +623,23 @@
             z-index: 2;
             box-shadow: 0 0 15px rgba(255, 94, 0, 0.5);
         }
-        
+
         /* 年度旗舰版特殊样式 - 现在在最右侧 */
         .pricing-card.featured {
             border: 2px solid var(--accent-color);
             transform: scale(1.05);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 25px rgba(76, 201, 240, 0.4);
         }
-        
+
         .pricing-card.featured .card-header {
             background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(76, 201, 240, 0.1));
         }
-        
+
         .pricing-card.featured:hover {
             transform: scale(1.05) translateY(-15px);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(76, 201, 240, 0.6);
         }
-        
+
         /* 按钮样式 */
         .cta-button {
             display: block;
@@ -612,7 +660,7 @@
             overflow: hidden;
             z-index: 1;
         }
-        
+
         .cta-button::before {
             content: '';
             position: absolute;
@@ -624,26 +672,26 @@
             transition: 0.5s;
             z-index: -1;
         }
-        
+
         .cta-button:hover::before {
             left: 100%;
         }
-        
+
         .cta-button:hover {
             background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(67, 97, 238, 0.4);
         }
-        
+
         .cta-button.featured {
             background: linear-gradient(90deg, #ff9d00, #ff5e00);
         }
-        
+
         .cta-button.featured:hover {
             background: linear-gradient(90deg, #ff5e00, #ff5e00);
             box-shadow: 0 10px 20px rgba(255, 94, 0, 0.4);
         }
-        
+
         /* 页脚 */
         footer {
             text-align: center;
@@ -656,7 +704,7 @@
             width: 100%;
             max-width: 1200px;
         }
-        
+
         .footer-links {
             display: flex;
             justify-content: center;
@@ -664,7 +712,7 @@
             margin-top: 20px;
             flex-wrap: wrap;
         }
-        
+
         .footer-links a {
             color: var(--gray-color);
             text-decoration: none;
@@ -673,11 +721,11 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .footer-links a:hover {
             color: var(--neon-blue);
         }
-        
+
         /* 响应式设计 */
         @media (max-width: 1200px) {
             .pricing-container {
@@ -685,110 +733,178 @@
                 max-width: 800px;
                 margin: 0 auto 60px;
             }
-            
+
             .pricing-card.featured {
                 transform: none;
             }
-            
+
             .pricing-card.featured:hover {
                 transform: translateY(-15px);
             }
-            
+
             .subtitle-icons {
                 gap: 30px;
             }
-            
+
             .highlight-box {
                 max-width: 90%;
             }
         }
-        
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
             }
-            
+
             h2 {
                 font-size: 1.4rem;
             }
-            
+
             .pricing-container {
                 grid-template-columns: 1fr;
                 max-width: 400px;
             }
-            
+
             .subtitle-icons {
                 gap: 20px;
             }
-            
+
             .icon-circle {
                 width: 60px;
                 height: 60px;
                 font-size: 1.6rem;
             }
-            
+
             .highlight-text {
                 font-size: 1.3rem;
             }
-            
+
             .highlight-amount {
                 font-size: 1.8rem;
             }
-            
+
             .logo {
                 font-size: 1.6rem;
             }
-            
+
             .logo-icon {
                 font-size: 2rem;
             }
         }
-        
+
         @media (max-width: 480px) {
             .container {
                 padding: 10px;
             }
-            
+
             h1 {
                 font-size: 2rem;
             }
-            
+
             h2 {
                 font-size: 1.1rem;
             }
-            
+
             .highlight-box {
                 padding: 20px;
             }
-            
+
             .price {
                 font-size: 2.2rem;
             }
-            
+
             .plan-name {
                 font-size: 1.5rem;
             }
-            
+
             .subtitle-icons {
                 gap: 15px;
             }
-            
+
             .icon-circle {
                 width: 50px;
                 height: 50px;
                 font-size: 1.4rem;
             }
-            
+
             .icon-text {
                 font-size: 0.9rem;
             }
         }
+
+        /* ===== 通用弹窗（玻璃态） ===== */
+        .modal-mask {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .65);
+            backdrop-filter: blur(8px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .modal-panel {
+            background: linear-gradient(180deg, #161b22, #0d1117);
+            border: 1px solid rgba(76, 201, 240, .2);
+            box-shadow: 0 0 40px rgba(76, 201, 240, .15);
+            border-radius: 16px;
+            width: 90%;
+            max-width: 680px;
+            padding: 30px;
+            position: relative;
+            animation: modalIn .35s ease-out;
+        }
+
+        @keyframes modalIn {
+            from {
+                transform: scale(.9) translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            background: none;
+            border: none;
+            font-size: 22px;
+            color: #8b949e;
+            cursor: pointer;
+        }
+
+        .modal-close:hover {
+            color: #fff;
+        }
+
+        /* Markdown 内容 */
+        #modal-content h1,
+        #modal-content h2,
+        #modal-content h3 {
+            margin: 20px 0 10px;
+        }
+
+        #modal-content ul {
+            padding-left: 20px;
+        }
+
+        #modal-content li {
+            margin: 6px 0;
+        }
+        
     </style>
 </head>
+
 <body>
     <!-- 粒子背景容器 -->
     <div id="particles-js"></div>
-    
+
     <!-- 科技感背景元素 -->
     <div class="tech-bg">
         <div class="floating-element"></div>
@@ -796,7 +912,7 @@
         <div class="floating-element"></div>
         <div class="floating-element"></div>
     </div>
-    
+
     <div class="container">
         <header>
             <div class="logo-container">
@@ -826,18 +942,19 @@
                 </div>
             </div>
         </header>
-        
+
         <!-- 信息强化模块 - 居中显示 -->
         <div class="highlight-box">
             <div class="highlight-content">
                 <i class="fas fa-gem highlight-icon"></i>
                 <div>
-                    <div class="highlight-text">选择年度旗舰版 = 节省 <span class="highlight-amount">¥900</span>（相当于免费使用2个月）</div>
+                    <div class="highlight-text">选择年度旗舰版 = 节省 <span class="highlight-amount">¥900</span>（相当于免费使用2个月）
+                    </div>
                     <div style="font-size: 1.1rem; opacity: 0.9; margin-top: 8px;">💰 年度旗舰版最优惠，立即节省更多！</div>
                 </div>
             </div>
         </div>
-        
+
         <!-- 价格方案容器 -->
         <div class="pricing-container">
             <!-- 1个月：灵活体验版 -->
@@ -860,7 +977,7 @@
                     <i class="fas fa-hand-point-up"></i> 选择此方案
                 </a>
             </div>
-            
+
             <!-- 3个月：季度入门版 -->
             <div class="pricing-card">
                 <div class="card-header">
@@ -882,7 +999,7 @@
                     <i class="fas fa-play-circle"></i> 选择此方案
                 </a>
             </div>
-            
+
             <!-- 6个月：半年精选版 -->
             <div class="pricing-card">
                 <div class="card-header">
@@ -905,7 +1022,7 @@
                     <i class="fas fa-briefcase"></i> 选择此方案
                 </a>
             </div>
-            
+
             <!-- 12个月：年度旗舰版 -->
             <div class="pricing-card featured">
                 <div class="featured-tag">
@@ -933,24 +1050,30 @@
                 </a>
             </div>
         </div>
-        
+        <!-- 通用弹窗 -->
+        <div id="global-modal" class="modal-mask">
+            <div class="modal-panel">
+                <button class="modal-close">×</button>
+                <div id="modal-content"></div>
+            </div>
+        </div>
         <footer>
             <p>© 2020-2026 StatSense 数据智能平台. 保留所有权利.</p>
             <div class="footer-links">
-                <a href="#"><i class="fas fa-file-contract"></i> 服务条款</a>
-                <a href="#"><i class="fas fa-shield-alt"></i> 隐私政策</a>
+                <a href="./privacy.html"><i class="fas fa-file-contract"></i> 服务条款</a> 
+                <a href="./privacy.html"><i class="fas fa-shield-alt"></i> 隐私政策</a>
                 <a href="#"><i class="fas fa-phone-alt"></i> 联系我们</a>
             </div>
-            
+
         </footer>
     </div>
 
     <!-- 引入粒子库 -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    
+
     <script>
         // 粒子背景初始化
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // 初始化粒子背景
             particlesJS('particles-js', {
                 particles: {
@@ -1054,7 +1177,7 @@
                 },
                 retina_detect: true
             });
-            
+
             // 图标逐个跳入动画
             const iconItems = document.querySelectorAll('.icon-item');
             iconItems.forEach((item, index) => {
@@ -1062,13 +1185,13 @@
                     item.classList.add('animate-in');
                 }, 300 + (index * 200));
             });
-            
+
             // highlight-box动画
             const highlightBox = document.querySelector('.highlight-box');
             setTimeout(() => {
                 highlightBox.classList.add('animate-in');
             }, 300 + (iconItems.length * 200) + 300);
-            
+
             // 价格卡片动画
             const pricingCards = document.querySelectorAll('.pricing-card');
             setTimeout(() => {
@@ -1078,50 +1201,48 @@
                     }, index * 150);
                 });
             }, 300 + (iconItems.length * 200) + 800);
-            
+
             // 为所有价格方案卡片添加点击效果
             document.querySelectorAll('.pricing-card').forEach(card => {
-                card.addEventListener('click', function() {
+                card.addEventListener('click', function () {
                     // 获取方案名称
                     const planName = this.querySelector('.plan-name').textContent;
                     const planPrice = this.querySelector('.price').textContent;
-                    
+
                     // 模拟选择操作
                     console.log(`选择了方案: ${planName}, 价格: ${planPrice}`);
-                    
+
                     // 添加视觉反馈
-                    this.style.transform = this.classList.contains('featured') 
-                        ? 'scale(1.05) translateY(-5px)' 
+                    this.style.transform = this.classList.contains('featured')
+                        ? 'scale(1.05) translateY(-5px)'
                         : 'translateY(-5px)';
-                    
+
                     // 在实际应用中，这里可以添加跳转到购买页面的逻辑
                 });
             });
-            
+
             // 为按钮添加点击效果
-            document.querySelectorAll('.cta-button').forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    const card = this.closest('.pricing-card');
-                    const planName = card.querySelector('.plan-name').textContent;
-                    const planPrice = card.querySelector('.price').textContent;
-                    
-                    // 创建脉冲效果
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 200);
-                    
-                    // 显示选择提示
-                    alert(`您已选择 ${planName} 方案，价格: ${planPrice}\n\n即将跳转到支付页面...`);
-                    
-                    // 在实际应用中，这里会跳转到支付页面
+            document.querySelectorAll('.cta-button').forEach(btn => {
+                btn.addEventListener('click', e => {
+                    e.preventDefault();
+                    const plan = btn.closest('.pricing-card')
+                        .querySelector('.plan-name').textContent;
+
+                    openModal(`
+          <div style="text-align:center">
+            <img src="2027.png" style="max-width:240px;margin-bottom:18px">
+            <p style="font-size:1.1rem">
+              您已选择 <b>${plan}</b><br>
+              请通过绿泡泡联系客服，协助您完成后续开通流程
+            </p>
+          </div>
+        `);
                 });
             });
-            
+
             // 为图标添加悬停效果
             document.querySelectorAll('.icon-item').forEach(item => {
-                item.addEventListener('mouseenter', function() {
+                item.addEventListener('mouseenter', function () {
                     const icon = this.querySelector('.icon-circle i');
                     icon.style.transform = 'rotate(15deg) scale(1.1)';
                     setTimeout(() => {
@@ -1130,6 +1251,45 @@
                 });
             });
         });
+        /* ========= 通用弹窗工具 ========= */
+        const modal = document.getElementById('global-modal');
+        const modalContent = document.getElementById('modal-content');
+        document.querySelector('.modal-close').onclick = () => modal.style.display = 'none';
+
+        function openModal(html) {
+            modalContent.innerHTML = html;
+            modal.style.display = 'flex';
+        }
+        /* ========= 联系我们 ========= */
+        document.querySelector('.footer-links a:last-child')
+            .addEventListener('click', e => {
+                e.preventDefault();
+                openModal(`
+      <div style="text-align:center">
+        <img src="2027.png" style="max-width:260px;margin-bottom:20px">
+        <p style="font-size:1.05rem;opacity:.9">
+          请使用绿泡泡扫一扫，添加我们的客服，与我们取得联系
+        </p>
+      </div>
+    `);
+            });
+
+        /* ========= 选择方案 ========= */
+        document.querySelectorAll('.cta-button').forEach(btn => {
+            btn.addEventListener('click', e => {
+                e.preventDefault();
+                const card = btn.closest('.pricing-card');
+                const plan = card.querySelector('.plan-name').textContent;
+                openModal(`
+            <img src="2027.png" style="max-width:240px; margin-bottom:15px;">
+            <p style="font-size:1.1rem;">
+                您已选择 <b style="color:#4cc9f0;">${plan}</b><br>
+                请通过绿泡泡联系客服，协助您完成后续开通流程
+            </p>
+        `);
+            });
+        });
     </script>
 </body>
+
 </html>
